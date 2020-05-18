@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     }
 
     override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        presses.forEach {
-            guard let key = $0.key else { return }
+        for press in presses {
+            guard let key = press.key else { continue }
             self.myLabel.text = "응 \(key.characters) 누른 부분이야~"
         }
     }
